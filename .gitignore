@@ -1,0 +1,48 @@
+# Gradle
+.gradle/
+build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# NeoForge - MDK run & test data
+run/
+runs/
+runClient/
+runServer/
+runData/
+logs/
+crash-reports/
+
+# MCreator - Local MCreator cache/temp
+.mcreator/tmp/
+.mcreator/cache/
+.mcreator/*.lock
+
+# MCreator - Local Editor State 
+.mcreator/localHistory/
+.mcreator/workspaceBackups/
+.mcreator/generatorGradleCache
+.mcreator/setupInfo
+.mcreator/userSettings
+
+# IDE
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+.settings/
+.classpath
+.project
+bin/
+
+# OS Files 
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Misc
+*.log
+*.class
+*.tmp
+.eclipse/
