@@ -1,48 +1,55 @@
-# Gradle
-.gradle/
-build/
-out/
-!gradle/wrapper/gradle-wrapper.jar
+# Gradle (applies to both versions)
+**/.gradle/
+**/build/
+**/out/
+!**/gradle/wrapper/gradle-wrapper.jar
 
-# NeoForge - MDK run & test data
-run/
-runs/
-runClient/
-runServer/
-runData/
-logs/
-crash-reports/
+# NeoForge/Forge - MDK run & test data
+**/run/
+**/runs/
+**/runClient/
+**/runServer/
+**/runData/
+**/logs/
+**/crash-reports/
 
 # MCreator - Local MCreator cache/temp
-.mcreator/tmp/
-.mcreator/cache/
-.mcreator/*.lock
+**/.mcreator/tmp/
+**/.mcreator/cache/
+**/.mcreator/*.lock
 
-# MCreator - Local Editor State 
-.mcreator/localHistory/
-.mcreator/workspaceBackups/
-.mcreator/generatorGradleCache
-.mcreator/setupInfo
-.mcreator/userSettings
+# MCreator - Local Editor State
+**/.mcreator/localHistory/
+**/.mcreator/workspaceBackups/
+**/.mcreator/generatorGradleCache
+**/.mcreator/setupInfo
+**/.mcreator/userSettings
+
+# MCreator - Workspace files
+**/workspace/
+**/*.mcreator?
+**/gradle.properties
+**/gradlew
+**/gradlew.bat
 
 # IDE
-.idea/
-*.iml
-*.ipr
-*.iws
-.vscode/
-.settings/
-.classpath
-.project
-bin/
+**/.idea/
+**/*.iml
+**/*.ipr
+**/*.iws
+**/.vscode/
+**/.settings/
+**/.classpath
+**/.project
+**/bin/
 
-# OS Files 
-.DS_Store
-Thumbs.db
-desktop.ini
+# OS Files
+**/.DS_Store
+**/Thumbs.db
+**/desktop.ini
 
 # Misc
-*.log
-*.class
-*.tmp
-.eclipse/
+**/*.log
+**/*.class
+**/*.tmp
+**/.eclipse/

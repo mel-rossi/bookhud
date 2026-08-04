@@ -1,0 +1,28 @@
+modLoader="javafml"
+loaderVersion="[47,)"
+license="GPL-3.0 License"
+
+[[mods]]
+modId="bookhud"
+version="0.5.1"
+displayName="BookHud"
+displayURL="https://github.com/mel-rossi/bookhud"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+authors="MelRR"
+description="A Minecraft HUD Mod for reading books while walking."
+
+# Start of user code block mod configuration
+# End of user code block mod configuration
+
+[[dependencies.bookhud]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.20.1]"
+    ordering="AFTER"
+    side="BOTH"
+
+
+
+
+# Start of user code block dependencies configuration
+# End of user code block dependencies configuration

@@ -22,9 +22,9 @@
   },
   "metadata": {
     "files": [
-      "src/main/resources/pack.mcmeta",
       "src/main/java/net/mcreator/bookhud/BookhudMod.java",
-      "src/main/resources/META-INF/neoforge.mods.toml"
+      "src/main/resources/META-INF/neoforge.mods.toml",
+      "src/main/resources/pack.mcmeta"
     ]
   },
   "foldersRoot": {
@@ -34,16 +34,18 @@
   "workspaceSettings": {
     "modid": "bookhud",
     "modName": "BookHUD",
-    "version": "1.0.0",
-    "author": "MCreator",
-    "websiteURL": "https://mcreator.net",
-    "license": "Not specified",
+    "version": "0.5.1",
+    "description": "A Minecraft HUD Mod for reading books while walking.",
+    "author": "MelRR",
+    "websiteURL": "https://github.com/mel-rossi/bookhud",
+    "license": "GPL-3.0 License",
     "serverSideOnly": false,
     "requiredMods": [],
     "dependencies": [],
     "dependants": [],
     "mcreatorDependencies": [],
     "currentGenerator": "neoforge-1.21.1",
+    "credits": "Created using mod maker MCreator - https://mcreator.net/about",
     "modElementsPackage": "net.mcreator.bookhud"
   },
   "mcreatorVersion": 202600230420

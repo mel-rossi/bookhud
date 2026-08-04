@@ -1,5 +1,7 @@
 /*
- * NeoForge (1.21.1) Docs : https://docs.neoforged.net/docs/1.21.1/gui/screens
+ * NeoForge (1.21.1) Docs : 
+ * https://docs.neoforged.net/docs/1.21.1/gettingstarted/
+ * https://docs.neoforged.net/docs/1.21.1/gui/screens
 */
 package net.mcreator.bookhud;
 
@@ -32,19 +34,20 @@ public class BookHudOverlay implements LayeredDraw.Layer {
 	public static KeyMapping nextPageKey; 
 	public static KeyMapping prevPageKey; 
 
-	// Registering Keybinds (NeoForge) 
+	// Registering Keybinds (NeoForge & Forge) 
 	@SubscribeEvent 
 	public static void RegisterKeyBindings(RegisterKeyMappingsEvent event) { 
-		// Set Default Next Page Key Bind : '['
-		nextPageKey = new KeyMapping("key.bookhud.next", GLFW.GLFW_KEY_RIGHT_BRACKET, "key.categories.misc");
-		// Set Default Prev Page Key Bind : ']'
-		prevPageKey = new KeyMapping("key.bookhud.prev", GLFW.GLFW_KEY_LEFT_BRACKET, "key.categories.misc");
+		// Set Default Next Page - ey Bind : '['
+		nextPageKey = new KeyMapping("key.boohud.next", GLFW.GLFW_KEY_RIGHT_BRACKET, "BookHUD"); 
+		// Set Default Prev Page - Key Bind : ']'
+		prevPageKey = new KeyMapping("Prev Page", GLFW.GLFW_KEY_LEFT_BRACKET, "BookHUD");
 
 		// Push assignments directly to Minecraft's global key registry
 		event.register(nextPageKey); 
 		event.register(prevPageKey);
 	}
 
+	// NeoForge Overlay Rendering 
 	@SubscribeEvent 
 	public static void registerGuiLayers(RegisterGuiLayersEvent event) { 
 		event.registerAbove(
@@ -54,6 +57,7 @@ public class BookHudOverlay implements LayeredDraw.Layer {
 		);
 	}
 
+	// Render Overlay Content - NeoForge 
 	@Override 
 	public void render(GuiGraphics guiGraphics, net.minecraft.client.DeltaTracker deltaTracker) { 
 		Minecraft mc = Minecraft.getInstance(); 
@@ -75,9 +79,12 @@ public class BookHudOverlay implements LayeredDraw.Layer {
 		// Grab text using client-clamped mapping variable 
 		String pageText = bookData.pages().get(clientCurrentPage - 1).raw().getString(); 
 
+		// Book title
+		String bookTitle = bookData.title().raw();
+
 		int screenWidth = mc.getWindow().getGuiScaledWidth(); 
 		int boxWidth = 140; 
-		int boxHeight = 160; 
+		int boxHeight = 175; 
 
 		int xPos = screenWidth - boxWidth - 10; 
 		int yPos = 10; 
@@ -85,14 +92,23 @@ public class BookHudOverlay implements LayeredDraw.Layer {
 		// HUD Box 
 		guiGraphics.fill(xPos - 5, yPos - 5, screenWidth - 10, yPos + boxHeight, 0xAA000000);
 
-		// Text Wrapping 
+		// Page Number 
 		guiGraphics.drawString(mc.font, "📄 Page " + clientCurrentPage, xPos, yPos, 0xFFFF55, false);
 
+		// Text Wrapping 
 		int currentLineY = yPos + 15; 
 		for (net.minecraft.util.FormattedCharSequence line : mc.font.split(Component.literal(pageText), boxWidth)) { 
 			guiGraphics.drawString(mc.font, line, xPos, currentLineY, 0xFFFFFF, false);
 			currentLineY += 10; 
 		}
+
+		// Book Title 
+		String titleDisplay = "📕 " + bookTitle;
+		int titleWidth = mc.font.width(titleDisplay);
+		int titleX = xPos + (boxWidth - titleWidth) / 2; // Center it
+		int titleY = yPos + boxHeight - 12; // Position near bottom of box
+		guiGraphics.drawString(mc.font, titleDisplay, titleX, titleY, 0x55FF55, false);
+		
 	}
 
 	// Keyboard Click Listener 
