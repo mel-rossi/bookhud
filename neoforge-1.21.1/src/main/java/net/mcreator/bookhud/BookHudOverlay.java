@@ -38,7 +38,7 @@ public class BookHudOverlay implements LayeredDraw.Layer {
 	@SubscribeEvent 
 	public static void RegisterKeyBindings(RegisterKeyMappingsEvent event) { 
 		// Set Default Next Page - ey Bind : '['
-		nextPageKey = new KeyMapping("key.boohud.next", GLFW.GLFW_KEY_RIGHT_BRACKET, "BookHUD"); 
+		nextPageKey = new KeyMapping("Next Page", GLFW.GLFW_KEY_RIGHT_BRACKET, "BookHUD"); 
 		// Set Default Prev Page - Key Bind : ']'
 		prevPageKey = new KeyMapping("Prev Page", GLFW.GLFW_KEY_LEFT_BRACKET, "BookHUD");
 
